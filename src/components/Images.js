@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Images = ({ imageUrl }) => {
-  if (!imageUrl) {
-    // throw new Error('image empty');
+  if (imageUrl === null) {
+    throw new Error('image empty');
   }
   return (
     <div className="picture">
