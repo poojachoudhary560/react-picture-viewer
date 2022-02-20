@@ -8,9 +8,10 @@ const Picture = (props) => {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res, res.urls?.full);
+        console.log(res, res.status, res.urls?.full);
         setImageData(res.urls?.thumb);
-      });
+      })
+      .catch((err) => console.log('----', err));
   }, []);
 
   return (
