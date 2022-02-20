@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+//import fallback_image from './fallback_image';
 
 const Picture = (props) => {
   const [imageData, setImageData] = useState('');
@@ -11,7 +12,10 @@ const Picture = (props) => {
         console.log(res, res.status, res.urls?.full);
         setImageData(res.urls?.thumb);
       })
-      .catch((err) => console.log('----', err));
+      .catch((err) => {
+        console.log('----', err);
+        // setImageData(fallback_image);
+      });
   }, []);
 
   return (
